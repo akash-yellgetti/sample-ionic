@@ -1,0 +1,40 @@
+<ion-content padding class="dark-bg">
+  <div class="page-heading text-center large-text">Your ongoing lets</div>
+  <div class='swipper-holder'>
+    <div class='swipper-holder-content'>
+      <div class="swiper-container swiper-container-inner">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let gallery of galleryList">
+            <div class="profiles-wrapper">
+              <img class='upload-img' src='{{gallery.img_url}}' alt='' />
+              <div class="profile-detail-holder">
+                <div class="profile-name-holder">{{user_name}}
+                  <span class="profile-age-holder" *ngIf="user_age!=''">, {{user_age}}</span>
+                </div>
+                <div class="profile-vaccination">{{vaccination}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev swiper-button-prev-inner"></div>
+        <div class="swiper-button-next swiper-button-next-inner"></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-heading">Activity partner Location </div>
+  <div class="live-location-holder"><div class="add-map-holder" id="add-map-holder"></div></div>
+</ion-content>
+<div class="bottom-header-container">
+  <div class='profile-link' tappable (click)='showProfile()'>
+      <ion-icon name="contact"></ion-icon>
+      <div class='full-content profile-text'>Profile</div>
+  </div>
+  <div class='lets-link'  tabbale (click)="goToHome()">
+      <img class='lets-img' src='../../assets/imgs/logo.png' />
+  </div>
+  <div class='discover-link' tappable (click)='showDiscover()'>
+      <ion-icon name="albums"></ion-icon><br />
+      <div class='full-content discover-text'>Discover</div>
+  </div>
+</div>

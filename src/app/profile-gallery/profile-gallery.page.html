@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar class='transparent-navbar white-text'>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile Gallery</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text ion-padding">
+    <ion-row>
+        <ion-col size='12' style="padding:0px;">
+            <div class='upload-container'>
+                <div class='upload-container-content' (click)='presentProfileActionSheet()'>
+                    <img class='upload-img' src='{{profilePic}}' alt='Default Pic' />
+                    <ion-icon name="add" class='upload-add-icon'></ion-icon>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="6" *ngFor="let image of imgArr;let i = index;">
+            <div class="profile-img-holder" (click)='presentActionSheet(image.user_gallery_id,i+1)'>
+                <img *ngIf='image.img_url!=""' class='profile-img' src='{{image.img_url}}' />
+                <ion-fab bottom right>
+                    <button ion-fab mini>
+                        <ion-icon name="add" class='upload-add-icon'></ion-icon>
+                    </button>
+                </ion-fab>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf='editFlag==false && hideContinueBtn==true'>
+        <ion-col col-12>
+            <p class="msg-lighter grey-text">
+                Upload some selfie/photos to activate your account.
+            </p>
+        </ion-col>
+    </ion-row>
+    <ion-button *ngIf='editFlag==false && hideContinueBtn==false' (click)='goToHomePage()' type="button" expand='full' class='btn-submit btn-continue'>Continue</ion-button>
+</ion-content>

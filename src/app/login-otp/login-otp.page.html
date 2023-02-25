@@ -1,0 +1,19 @@
+<ion-content class="dark-bg ion-padding">
+  <form [formGroup]="FrmLoginOtp" (ngSubmit)="onSubmit(FrmLoginOtp.value)">
+    <p class="h1-header reg-otp-header">
+      Login OTP
+    </p>
+    <p class="msg-lighter grey-text reg-otp-desc">
+      Please enter the OTP to verify your mobile number
+    </p>
+    <ion-list class='form-list login-form-list'>
+      <ion-item class="form-input-holder mobile-input-holder">
+        <ion-input type="text" placeholder="OTP" [(ngModel)]="model.otp" formControlName="TxtOTP" class='mobile-input'>
+        </ion-input>
+      </ion-item>
+      <div class="err-msg" *ngIf="FrmLoginOtp.controls.TxtOTP.hasError('required') && submitted">Enter OTP</div>
+    </ion-list>
+    <button type="submit" (click)='submitted=true;' full round class='btn-submit'
+      ion-button>Continue</button>
+  </form>
+</ion-content>

@@ -1,0 +1,57 @@
+
+.referral-code-text{
+    float: left;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: #FFF;
+    span{
+    font-size: 22px;
+    }
+}
+
+.share-link-holder{
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.share-link{
+    display:block;
+    width:100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #FFF;
+    ion-icon{
+    color: #FFF;
+    }
+    background-color: #065efe;
+}
+
+.refer-img-holder{
+    float: left;
+    width: 100%;
+}
+
+.refer-img{
+    float: left;
+    width: 100%;
+}
+
+.white-text{
+    color: #FFF;
+}
+
+.copy-holder{
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.copy-link{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 25px;
+    color: #FFF;
+    background-color: #333;
+}

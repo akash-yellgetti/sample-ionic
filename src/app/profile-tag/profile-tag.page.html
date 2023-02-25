@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-toolbar class="transparent-navbar white-text">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Interested In</ion-title>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text ion-padding">
+  <ion-row>
+    <ion-col col-12>
+      <div class='full-content form-wrapper tags-form'>
+        <form [formGroup]="FrmTagProfile" (ngSubmit)="validateTag()">
+          <ion-item *ngFor="let tag of tagList;">
+            <ion-label>{{tag?.tag_name || 'N/A'}}</ion-label>
+            <ion-checkbox ngcontrol="cbox" [checked]="tag.tag_flag" (ionChange)="checkedOrNot(tag.tag_id,$event)">
+            </ion-checkbox>
+          </ion-item>
+          <ion-button type="submit" expand="block" class='btn-submit'>Save</ion-button>
+        </form>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

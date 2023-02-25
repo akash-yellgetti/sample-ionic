@@ -1,0 +1,63 @@
+<ion-content class="dark-bg white-text ion-padding">
+  <div class="page-heading">Profile Details</div>
+  <p class="msg-lighter grey-text reg-profile-desc">
+      Tell us something about you. It will help us to understand you better...
+  </p>
+  <div class='full-content form-wrapper'>
+      <form [formGroup]="FrmRegProfile" (ngSubmit)="onSubmit(FrmRegProfile.value)">
+          <ion-list class='form-list'>
+            <ion-label class='ion-label' position="floating">My name is</ion-label>
+              <ion-item class='frorm-input-holder'>
+                  <ion-input type="text" formControlName="TxtName" placeholder="Enter Name" [(ngModel)]='model.name'></ion-input>
+              </ion-item>
+              <div class="err-msg" *ngIf="FrmRegProfile.controls.TxtName.hasError('required') && submitted">
+                  Enter a valid name
+              </div>
+               <ion-label class='ion-label' position="floating">My email id is</ion-label>
+              <ion-item>
+                  <ion-input type="text" formControlName="TxtEmail" placeholder="Enter Email ID" [(ngModel)]='model.email'></ion-input>
+              </ion-item>
+              <div class="err-msg" *ngIf="FrmRegProfile.controls.TxtEmail.hasError('required') && submitted">
+                  Enter a valid email id
+              </div>
+              <div class="err-msg" *ngIf="dupEmailFlag && submitted">Email ID already registered</div>
+               <ion-label class='ion-label' position="floating">Select Gender</ion-label>
+              <ion-item>
+                <ion-label>Select Gender</ion-label>
+                  <ion-select formControlName="DdlGender" [(ngModel)]='model.gender' interface="alert">
+                      <ion-select-option value="0">Select</ion-select-option>
+                      <ion-select-option *ngFor="let letstag of letsTagList" value="{{letstag.tag_id}}">
+                        {{letstag.tag_name}}</ion-select-option>
+                  </ion-select>
+              </ion-item>
+              <div class="err-msg" *ngIf="(FrmRegProfile.controls.DdlGender.hasError('required') || genderErr) && submitted">
+                  Select gender
+              </div>
+               <ion-label class='ion-label' position="floating">Covid Vaccination</ion-label>
+              <ion-item>
+                <ion-label>Select Vaccination Status</ion-label>
+                  <ion-select formControlName="DdlVaccination" [(ngModel)]='model.vaccination' interface="alert">
+                      <ion-select-option value="1">Not Vaccinated</ion-select-option>
+                      <ion-select-option value="2">Partial Vaccinated</ion-select-option>
+                      <ion-select-option value="3">Fully Vaccinated</ion-select-option>
+                  </ion-select>
+              </ion-item>
+              <div class="err-msg" *ngIf="FrmRegProfile.controls.DdlVaccination.hasError('required') && submitted">
+                Select Vaccination Status
+              </div>
+               <ion-label class='ion-label' position="floating">Marital Status</ion-label>
+              <ion-item>
+                <ion-label>Marital Status</ion-label>
+                  <ion-select formControlName="DdlMaritalStatus" [(ngModel)]='model.mstatus'  required >
+                      <ion-select-option value="1">Single</ion-select-option>
+                      <ion-select-option value="2">Couple</ion-select-option>
+                  </ion-select>
+              </ion-item>
+              <div class="err-msg"  *ngIf="FrmRegProfile.controls.DdlMaritalStatus.hasError('required') && submitted">
+                  select marital status
+              </div>
+          </ion-list>
+          <ion-button type="submit" (click)='submitted=true;' expand='full' class='btn-submit'>Continue</ion-button>
+      </form>
+  </div>
+</ion-content>

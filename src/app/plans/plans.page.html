@@ -1,0 +1,34 @@
+<ion-header collapse="fade">
+  <ion-toolbar class='transparent-navbar white-text'>
+    <ion-buttons slot="start">
+      <ion-button (click)="backToSubscription()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text ion-padding">
+  <div class="full-content">
+    <div class="close-button" (click)="this.navCtrl.pop()">
+      <ion-icon name="close-circle"></ion-icon>
+    </div>
+  </div>
+  <div class="full-content">
+
+    <div class="subscription-holder">
+      <div class="subscription-top">PLANS</div>
+      <ion-list>
+        <ion-item button *ngFor="let p of plans" (click)="purchase(p)" detail="false">
+          <ion-label class="ion-text-wrap" >
+            <h2>{{p.title }}</h2>
+            <p>{{ p.description }}</p>
+          </ion-label>
+          <ion-button slot="end" class="subscription-buy" >
+            {{ p.price }} {{ p.currency }}
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </div>
+
+  </div>
+</ion-content>

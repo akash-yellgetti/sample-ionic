@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar class='transparent-navbar white-text'>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Packages</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text ion-padding">
+  <div class="full-content">
+    <div class="close-button" (click)="this.navCtrl.pop()">
+      <ion-icon name="close-circle"></ion-icon>
+    </div>
+  </div>
+  <div class="full-content">
+
+    <div class="subscription-holder">
+      <div class="subscription-top">Packages</div>
+      <div class="subscription-bottom">
+        <div class="subscription-box" *ngFor="let plan of plans">
+          <div class="subscription-text">{{plan.validiity_months}}</div>
+          <div class="subscription-time">Month(s)</div>
+          <div class="subscription-price">Rs. {{plan.discount_price}} <span>Rs {{plan.plan_price}}</span></div>
+          <div class="subscription-buy" (click)="buySubscription(plan)">Buy</div>
+        </div>
+      </div>
+    </div>
+    <div class="full-content condition-text">
+      *Unlimited lets capped to {{capPerDay}} Lets per day
+    </div>
+    <div class="full-content help-text">
+      Recurring billing, cancel Anytime.
+    </div>
+  </div>
+</ion-content>

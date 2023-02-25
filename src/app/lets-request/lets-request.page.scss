@@ -1,0 +1,57 @@
+.transparent-navbar{
+    background-color:#065efe;
+}
+.lets-content{
+    padding-top: 45px;
+}
+.request-container{
+    display: inline-block;
+    width: 100%;
+    border:solid 1px #dedede;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.request-img{
+    width: 100%;
+    height:70vh;
+}
+
+.request-detail-holder{
+    display: inline-block;
+    width: 100%;
+    padding: 0px 10px 15px 10px;
+}
+.request-name{
+    color:#333;
+    font-size:20px;
+    font-weight: 800;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align:left;
+}
+
+.request-age{
+    color:#333;
+    font-weight:500;
+    text-align:left;
+}
+
+.request-lets,.request-vaccination{
+    color:#333;
+    font-size:16px;
+    margin-bottom: 5px;
+}
+
+.request-locality{
+    color:#333;
+    font-size:16px;
+    margin-bottom: 5px;
+}
+
+.action-btn.button-round-md {
+    border-radius: 64px;
+    padding: 0 2rem;
+    text-transform: none;
+}
+

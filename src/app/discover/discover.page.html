@@ -1,0 +1,67 @@
+<ion-header>
+	<ion-toolbar class="transparent-navbar white-text">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Discover</ion-title>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text">
+  <div class='swipper-holder'>
+    <div class='swipper-holder-content'>
+      <div class="swiper-container swiper-container-outer">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let profile of profiles">
+            <div class="swiper-container swiper-container-inner">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="profiles-wrapper">
+                    <img class='upload-img' src='{{profile.profile_pic}}' alt='' />
+                    <div class="profile-detail-holder">
+                      <div class="profile-name-holder">{{profile.name}},
+                        <span class="profile-age-holder">{{profile.age}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide" *ngFor="let gallery of profile.gallery">
+                  <div class="profiles-wrapper">
+                    <img class='upload-img' src='{{gallery.img_url}}' alt='' />
+                    <div class="profile-detail-holder">
+                      <div class="profile-name-holder">{{profile.name}}
+                        <span class="profile-age-holder" *ngIf="profile.age!=''">, {{profile.age}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev swiper-button-prev-inner"></div>
+              <div class="swiper-button-next swiper-button-next-inner"></div>
+            </div>
+            <div class="profile-flag"  (click)="reportUser(profile.user_id)"><ion-icon name="flag"></ion-icon></div>
+          </div>
+        </div>
+        <div class="swiper-button-prev swiper-button-prev-outer"></div>
+        <div class="swiper-button-next swiper-button-next-outer"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-header-container">
+      <div class='profile-link' tappable (click)='showProfile()'>
+          <ion-icon name="person-circle-sharp"></ion-icon>
+          <div class='full-content profile-text'>Profile</div>
+      </div>
+      <div class='lets-link' tabbale (click)="goToHome()">
+          <img class='lets-img' src='../../assets/imgs/logo.png' />
+      </div>
+      <div class='discover-link'>
+          <ion-icon name="albums"></ion-icon><br />
+          <div class='full-content discover-text'>Discover</div>
+      </div>
+  </div>
+
+  <!--#Modal-->
+
+</ion-content>

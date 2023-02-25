@@ -1,0 +1,36 @@
+<ion-content padding class="dark-bg">
+  <div class="page-heading text-center large-text">Activity partner</div>
+  <div class='swipper-holder'>
+    <div class='swipper-holder-content'>
+      <div class="swiper-container swiper-container-inner">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let gallery of galleryList">
+            <div class="profiles-wrapper">
+              <img class='upload-img' src='{{gallery.img_url}}' alt='' />
+              <div class="profile-detail-holder">
+                <div class="profile-name-holder">{{user_name}}
+                  <span class="profile-age-holder" *ngIf="user_age!=''">, {{user_age}}</span>
+                </div>
+                <div class="profile-vaccination">{{vaccination}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev swiper-button-prev-inner"></div>
+        <div class="swiper-button-next swiper-button-next-inner"></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-heading">Activity partner location</div>
+  <div class="live-location-holder"><div class="add-map-holder" id="add-map-holder"></div></div>
+</ion-content>
+<div class="bottom-container">
+  <div class='accept-link' tappable (click)='acceptLetsPartner()'>
+    <ion-icon name="checkmark-circle"></ion-icon>
+  </div>
+  <div class='reject-link' tappable (click)='promptRejectLetsPartner()'>
+    <ion-icon name="close-circle"></ion-icon>
+  </div>
+  <div class='cancel-lets-link' tappable (click)="cancelLets()"> Cancel Lets</div>
+</div>

@@ -1,0 +1,107 @@
+.login-bg {
+    background-color: #f1efef;
+}
+.pet-heading {
+    font-size: 18px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.reg-pet-container {
+    float: left;
+    width: 100%;
+}
+
+.pet-content-box {
+    display: inline-block;
+    width: 49%;
+    margin-top: 15px;
+}
+
+.pet-container {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.pet-content {
+    display: inline-block;
+    width: 80%;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: solid 1px #d3d3d2;
+}
+
+.pet-content-active {
+    background-color: #065efe;
+}
+.pet-content-active .pet-header {
+    color: #fff;
+}
+.pet-logo-holder {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.pet-logo {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.pet-header {
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.item-md.item-block .item-inner,
+.item-md .item-inner {
+    padding-right: 8px;
+    border-bottom: none;
+    border-bottom-color: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+    .item-inner,
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+    .item-inner {
+    border-bottom-color: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.item-md.item-input.item-input-has-focus .item-inner,
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus)
+    .item-inner {
+    border-bottom-color: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.lets-item {
+    border-radius: 5px;
+    padding-left: 0px;
+    margin-bottom: 3px;
+}
+
+.not-pet-text {
+    float: left;
+    width: 100%;
+    padding: 15px 0px;
+    margin-top: 25px;
+    text-align: center;
+    background-color: #d1d1d1;
+    border-radius: 5px;
+    margin-top: 15px;
+}

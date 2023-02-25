@@ -1,0 +1,29 @@
+<ion-content class="sub-page-bg ion-padding">
+  <div class="full-content">
+    <div class="close-button" (click)="goToProfile()">
+      <ion-icon name="close-circle"></ion-icon>
+    </div>
+  </div>
+  <div class="full-content">
+    <div class="subscription-holder">
+      <div class="subscription-top">Pricing</div>
+      <div class="subscription-bottom">
+        <div class="subscription-box" *ngFor="let plan of plans">
+          <div class="subscription-text">{{plan.num_of_lets}}</div>
+          <div class="subscription-time">Lets</div>
+          <div class="subscription-price">Rs. {{plan.discount_price}} <span>Rs {{plan.plan_price}}</span></div>
+          <div class="subscription-validity">{{plan.validity_days}} Days</div>
+          <div class="subscription-buy" (click)="buySubscription()">Buy</div>
+        </div>
+      </div>
+  </div>
+    <div class="full-content">
+      <div class="or-text-back">
+        <div class="or-text">OR</div>
+      </div>
+    </div>
+    <div class="full-content">
+      <div class="continue" (click)="openPackages()">Subscribe Packages</div>
+    </div>
+  </div>
+</ion-content>

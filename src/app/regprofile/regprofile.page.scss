@@ -1,0 +1,75 @@
+
+    .login-bg {
+      background-color: #f1efef;
+    }
+  
+    .form-wrapper{
+        padding:10px;
+    }
+
+    .list-ios{
+        background:transparent;
+    }
+
+    .page-heading {
+      padding: 25px 15px 0px 15px;
+      color: #065efe;
+      font-size: 22px;
+    }
+  
+    .form-list .item-md {
+      padding: 0px;
+    }
+  
+    .btn-submit {
+      margin-top: 15px;
+    }
+  
+    .reg-profile-desc {
+      padding: 0px 15px;
+    }
+  
+    .item-md.item-block .item-inner,
+    .item-md .item-inner {
+      padding-right: 8px;
+      border-bottom: none;
+      border-bottom-color: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+  
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+      .item-inner,
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+      .item-inner {
+      border-bottom-color: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus)
+      .item-inner {
+      border-bottom-color: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  
+    .form-list ion-item {
+      margin-top: 5px;
+      margin-bottom: 3px;
+      border-radius: 5px;
+      height: 45px;
+      font-size: 13px;
+    }
+  
+    .item-select .label-md {
+      margin: 13px 8px 13px 10px;
+    }
+
+    .ion-label{
+        margin-top:10px;
+    }
+  
+  

@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar class='transparent-navbar white-text'>
+	<ion-buttons slot="start">
+		<ion-back-button></ion-back-button>
+	  </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text profile-content">
+	<div class='upload-container'>
+		<div class='upload-container-content' (click)='showEditProfilePage()'>
+			<img class='upload-img' src='{{profilePic}}' alt='Default Pic' />
+			<ion-icon name="create" class='upload-add-icon'></ion-icon>
+		</div>
+	</div>
+	<div class='profile-list-holder'>
+		<ion-list class='profile-list' lines="none">
+			<ion-item (click)='showEditProfilePage()' lines="none">
+				<ion-avatar item-start>
+					<ion-icon name="create" class='profile-list-icon'></ion-icon>
+				</ion-avatar>
+				<span class="profile-list-text">Edit Profile</span>
+			</ion-item>
+			<ion-item (click)='showProfileGalleryPage()' lines="none">
+				<ion-avatar item-start>
+					<ion-icon name="images" class='profile-list-icon'></ion-icon>
+				</ion-avatar>
+				<span class="profile-list-text">Add Images</span>
+			</ion-item>
+			<!-- <ion-item  (click)='showInviteFriendsPage()'>
+				<ion-avatar item-start>
+					<ion-icon name="mail" class='profile-list-icon'></ion-icon>
+				</ion-avatar><span class="profile-list-text">Invite Friends</span>
+			</ion-item> -->
+			<ion-item  (click)='showReferCodePage()'>
+				<ion-avatar item-start>
+					<ion-icon name="megaphone" class='profile-list-icon'></ion-icon>
+				</ion-avatar> <span class="profile-list-text">My Referral Code</span>
+			</ion-item>
+			<ion-item  (click)="showSubscriptionsPage()">
+				<ion-avatar item-start>
+					<ion-icon name="card" class='profile-list-icon'></ion-icon>
+				</ion-avatar> <span class="profile-list-text">Subscriptions</span>
+			</ion-item>
+			<ion-item (click)="showProfileTagPage()">
+				<ion-avatar item-start>
+					<ion-icon name="pricetag" class='profile-list-icon'></ion-icon>
+				</ion-avatar> <span class="profile-list-text">Intrested In</span>
+			</ion-item>
+			<ion-item (click)="showChangePassword()">
+				<ion-avatar item-start>
+					<ion-icon name="lock-closed" class='profile-list-icon'></ion-icon>
+				</ion-avatar> <span class="profile-list-text">Change Password</span>
+			</ion-item>
+			<ion-item (click)="goToAbout()">
+				<ion-avatar item-start>
+				<ion-icon name="information-circle" class='profile-list-icon'></ion-icon>
+				</ion-avatar> <span class="profile-list-text">About</span>
+			</ion-item>
+			<ion-item (click)="goToPrivacy()">
+				<ion-avatar item-start>
+					<ion-icon name="shield" class='profile-list-icon'></ion-icon>
+				</ion-avatar> <span class="profile-list-text">Privacy Policy</span>
+			</ion-item>
+			<ion-item (click)="goToHome()">
+				<ion-avatar item-start>
+					<ion-icon name="home" class='profile-list-icon'></ion-icon>
+				</ion-avatar> <span class="profile-list-text">Home</span>
+			</ion-item>
+			<ion-item (click)="logOutUser()">
+				<ion-avatar item-start>
+					<ion-icon name="log-out" class='profile-list-icon'></ion-icon>
+				</ion-avatar> <span class="profile-list-text">Log out</span>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>
+

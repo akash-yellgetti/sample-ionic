@@ -1,0 +1,38 @@
+.no-user-msg{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+}
+
+.logo-holder {
+    display: inline-block;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.logo-img {
+    display: inline-block;
+    width: 100px;
+}
+.btn-lets {
+    margin-top: 50px;
+    background-color: #065efe;
+    // padding: 27px 41px;
+    // font-size: 2rem;
+}
+
+.btn-lets.button-md {
+    text-transform: none;
+}
+
+.button.btn-lets:hover:not(.disable-hover) {
+    background-color: #065efe;
+    -webkit-box-shadow: inset 0 0px 30px #065efe;
+    box-shadow: inset 0 0px 30px #065efe;
+}
+  

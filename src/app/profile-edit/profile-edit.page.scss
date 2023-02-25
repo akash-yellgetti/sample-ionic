@@ -1,0 +1,116 @@
+.transparent-navbar{
+    background-color: #065efe;
+}
+.upload-container {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 56px 0px 30px 0px;;
+    background-color: #065efe;
+}
+
+.upload-container-content {
+    display: inline-block;
+    width: 150px;
+    position: relative;
+}
+.upload-img {
+    width: 150px;
+    border-radius: 50%;
+    height: 150px;
+    border: solid 1px #fff;
+}
+
+.upload-add-icon {
+    position: absolute;
+    bottom: 9px;
+    right: 23px;
+    font-size: 1.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #075eef;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.profile-content{
+    --padding-top:40px;
+    --margin-top:50px;
+}
+
+.profile-img-holder {
+    width: 100%;
+    // height: 195px;
+    height: 222px;
+    border: solid 2px #dedede;
+    background-color: #eee;
+    text-align: center;
+    overflow: hidden;
+}
+
+.profile-img {
+    display: inline-block;
+    // max-width: 100%;
+    // max-height: 100%;
+    width: 100%;
+}
+
+ion-fab[right] {
+    right: 10px;
+    right: calc(10px + constant(safe-area-inset-right));
+    right: calc(2px + env(safe-area-inset-right));
+}
+ion-fab[bottom] {
+    bottom: 2px;
+}
+
+.fab-md {
+    color: #fff;
+    background-color: #075eef;
+}
+
+.btn-continue {
+    margin-top: 25px;
+}
+
+.form-list .item-md {
+    padding-left: 0px;
+    background-color: transparent;
+    color: #FFFFFF;
+    margin-bottom: 3px;
+}
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+    .item-inner,
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+    .item-inner {
+    border-bottom-color: #dedede;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus)
+    .item-inner {
+    border-bottom-color: #dedede;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.item-md.item-input.item-input-has-focus .item-inner,
+.item-md.item-input.item-has-focus .item-inner {
+    border-bottom-color: #dedede;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.my-checkbox {
+    float: left;
+    align-items: center;
+}
+
+.ion-label {
+    color:#dedede;
+}

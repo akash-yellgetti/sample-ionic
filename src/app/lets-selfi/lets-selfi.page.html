@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar class='transparent-navbar white-text'>
+    <ion-title>Lets Have Selfi</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text ion-padding">
+  <ion-row>
+      <ion-col col-12>
+          <p class="msg-lighter grey-text">
+              Upload selfie to proceed.
+          </p>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col col-6 *ngFor="let image of imgArr;let i = index;">
+          <div class="profile-img-holder" (click)='openSelfiCamera(image.lets_selfi_id,i+1)'>
+              <img *ngIf='image.img_url!=""' class='profile-img' src='{{image.img_url}}' />
+              <ion-fab vertical="bottom" horizontal="end" >
+                  <ion-fab-button size="small">
+                      <ion-icon name="camera"></ion-icon>
+                  </ion-fab-button>
+              </ion-fab>
+          </div>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col size="6">
+          <ion-button  [disabled]='disableFormFlag==false' expand="full" shape="round" class='btn-submit btn-continue'
+              (click)='acceptLetsPartner()'>Done</ion-button>
+      </ion-col>
+      <ion-col size="6">
+          <ion-button type="button" expand="full" shape="round" class='btn-submit btn-continue' (click)='acceptLetsPartner()'>Skip</ion-button>
+      </ion-col>
+  </ion-row>
+</ion-content>
+

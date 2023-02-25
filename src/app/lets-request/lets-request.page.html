@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar class='transparent-navbar white-text'>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Requesting Lets</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text ion-padding">
+    <div class="full-content lets-content" *ngIf='requestList.length>0'>
+      <div class="request-container" *ngFor="let request of requestList;">
+        <img class='request-img' src='{{request.profile_pic}}' alt='Default Pic' />
+        <div class='request-detail-holder'>
+          <div class='request-name'>{{request.name}}<span *ngIf="request.age!=''">, {{request.age}}</span></div>
+          <div class="request-lets">Intrested in : {{request.lets_text}}</div>
+          <div class="request-vaccination">{{request.vaccination}}</div>
+          <ion-button shape="round" color="secondary" class="action-btn" (click)="acceptLetsRequest(request)">Accept</ion-button>
+          <ion-button shape="round" color="danger" class="action-btn" (click)="ignoreLetsRequest(request)">Ignore</ion-button>
+          <ion-button *ngIf='request.report_flag==0' shape="round" color="light" class="action-btn"
+            (click)="reportLets(request)">Report</ion-button>
+          <ion-button *ngIf='request.report_flag!=0' fill='clear' color="danger">Reported</ion-button>
+        </div>
+      </div>
+    </div>
+    <div class="full-content lets-content" *ngIf='requestList.length<=0'>
+      <div class='empty-msg text-center white-text'>No requesting lets available. Try later..</div>
+    </div>
+</ion-content>

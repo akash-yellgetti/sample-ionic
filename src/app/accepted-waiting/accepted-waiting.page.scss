@@ -1,0 +1,41 @@
+.waiting-spinner-holder{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+ion-spinner {
+    transform: scale(2);
+    fill: #075EEF;
+    stroke: #075EEF;
+}
+
+.waiting-text{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 15px 15px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.waiting-holder{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+.waiting-container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.action-holder{
+    display: flex;
+    width: 100%;
+    align-self: flex-end;
+}

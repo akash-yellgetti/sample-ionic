@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar class='transparent-navbar white-text'>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text ion-padding profile-content">
+  <div class='upload-container'>
+    <div class='upload-container-content' (click)='presentProfileActionSheet()'>
+        <img class='upload-img' src='{{profilePic}}' alt='Default Pic' />
+        <ion-icon name="add" class='upload-add-icon'></ion-icon>
+    </div>
+  </div>
+  <ion-row>
+      <ion-col size="12">
+          <ion-row>
+              <ion-col size="6" *ngFor="let image of imgArr;let i = index;">
+                  <div class="profile-img-holder" (click)='presentActionSheet(image.user_gallery_id,i+1)'>
+                      <img *ngIf='image.img_url!=""' class='profile-img' src='{{image.img_url}}' />
+                      <ion-fab bottom right>
+                          <button ion-fab mini>
+                              <ion-icon name="add" class='upload-add-icon'></ion-icon>
+                          </button>
+                      </ion-fab>
+                  </div>
+              </ion-col>
+
+          </ion-row>
+      </ion-col>
+      <ion-col size="12">
+          <div class='full-content'>
+              <form [formGroup]="FrmRegProfile" (ngSubmit)="onSubmit()">
+                  <ion-list class='form-list'>
+                      <ion-item class='form-input-holder'>
+                          <ion-label class='ion-label' position="floating">My name is</ion-label>
+                          <ion-input class="dark-input" type="text" formControlName="TxtName" [(ngModel)]='model.name'></ion-input>
+                        </ion-item>
+                        <div class="err-msg"  *ngIf="FrmRegProfile.controls.TxtName.hasError('required') && submitted">
+                            Enter a valid name
+                        </div>
+                      <ion-item>
+                          <ion-label class='ion-label' position="floating">My email id is</ion-label>
+                          <ion-input class="dark-input" type="text" formControlName="TxtEmail" [(ngModel)]='model.email'></ion-input>
+                      </ion-item>
+                      <div class="err-msg" *ngIf="FrmRegProfile.controls.TxtEmail.hasError('required') && submitted">
+                          Enter a valid email ID
+                      </div>
+                      <div class="err-msg" *ngIf="dupEmailFlag && submitted">Email ID already registered</div>
+                      <ion-item>
+                          <ion-label class='ion-label' position="floating">Date of Birth</ion-label>
+                          <ion-datetime  display-format='DD-MMM-YYYY' formControlName="TxtDOB" [(ngModel)]='model.dob' [max]="toDay"  class="dark-input"></ion-datetime>
+                      </ion-item>
+                      <ion-item>
+                          <ion-label class='ion-label' position="floating">Select Gender</ion-label>
+                          <ion-select class="dark-input" formControlName="DdlGender" [(ngModel)]='model.gender'>
+                            <ion-select-option value="0">Select</ion-select-option>
+                            <ion-select-option *ngFor="let letstag of letsTagList" value="{{letstag.tag_id}}">
+                              {{letstag.tag_name}}</ion-select-option>
+                          </ion-select>
+                      </ion-item>
+                      <ion-item class="form-msg"
+                          *ngIf="(FrmRegProfile.controls.DdlGender.hasError('required') || genderErr) && submitted">
+                          <div class="err-msg"> Please select gender </div>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label class='ion-label' position="floating">Covid Vaccination</ion-label>
+                          <ion-select class="dark-input" formControlName="DdlVaccination" [(ngModel)]='model.vaccination'>
+                              <ion-select-option value="1">Not Vaccinated</ion-select-option>
+                              <ion-select-option value="2">Partial Vaccinated</ion-select-option>
+                              <ion-select-option value="3">Fully Vaccinated</ion-select-option>
+                          </ion-select>
+                      </ion-item>
+                      <div class="err-msg" *ngIf="FrmRegProfile.controls.DdlVaccination.hasError('required') && submitted">
+                        Select Vaccination Status
+                      </div>
+                      <ion-item>
+                          <ion-label class='ion-label' position="floating">Marital Status</ion-label>
+                          <ion-select class="dark-input" formControlName="DdlMaritalStatus" [(ngModel)]='model.mstatus'>
+                              <ion-select-option value="1">Single</ion-select-option>
+                              <ion-select-option value="2">Couple</ion-select-option>
+                          </ion-select>
+                      </ion-item>
+                      <ion-item class="form-msg"
+                          *ngIf="FrmRegProfile.controls.DdlMaritalStatus.hasError('required') && submitted">
+                          <div class="err-msg">Please select marital status</div>
+                      </ion-item>
+                      <ion-item>
+                          <ion-label class='ion-label' position="floating">Do you have any Pet?</ion-label>                            
+                          <ion-select class="dark-input" formControlName="DdlPet" [(ngModel)]='model.pet'>
+                            <ion-select-option value="0">Select</ion-select-option>
+                            <ion-select-option value="1">Dog</ion-select-option>
+                            <ion-select-option value="2">Cat</ion-select-option>
+                            <ion-select-option value="3">Others</ion-select-option>                             
+                          </ion-select>
+                      </ion-item>                        
+                      <ion-item class='form-input-holder' *ngIf="model.pet==3">
+                          <ion-label class='ion-label' position="floating">Other Pet Type</ion-label>       
+                          <ion-input class="dark-input" type="text" formControlName="TxtPetType" [(ngModel)]='model.pet_name'></ion-input>
+                      </ion-item>
+                      <div class="err-msg" *ngIf="petErr">Enter Required Detail</div>                          
+                  </ion-list>
+                  <ion-button type="submit" (click)='submitted=true;' expand="block" class='btn-submit'>Save Profile</ion-button>
+              </form>
+          </div>
+      </ion-col>
+  </ion-row>
+</ion-content>

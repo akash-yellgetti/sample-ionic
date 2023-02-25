@@ -1,0 +1,47 @@
+<ion-content class="dark-bg ion-padding">
+  <div class='logo-holder'>
+    <img class='logo-img' src='../../assets/imgs/logo.png' alt="Logo" />
+  </div>
+  <div class='full-content login-form-wrapper'>
+    <p class="h1-header reg-otp-header">
+      Welcome
+    </p>
+    <form [formGroup]="FrmLogin" (ngSubmit)="onSubmit(FrmLogin.value)" class="ion-text-center">
+      <ion-list class='form-list login-form-list'>
+        <ion-item class="form-input-holder mobile-input-holder">
+          <ion-select [(ngModel)]="model.country_phone_code" (ionChange)="getCountryVal()" interface="action-sheet"
+            class="mobile-select" name="DdlCountry" id="DdlCountry" formControlName="DdlCountry"
+            [selectedText]="model.country_phone_code">
+            <ng-template ngFor let-country [ngForOf]="countries">
+              <ion-select-option value="+{{country.country_phone_code}}" *ngIf="country.country_phone_code!=''">
+                +{{country.country_phone_code}} {{country.country_name}}
+              </ion-select-option>
+            </ng-template>
+          </ion-select>
+
+          <ion-input type="number" formControlName="TxtLogMobile" [(ngModel)]="model.mobile" class="mobile-input"
+            name="TxtLogMobile" id="TxtLogMobile" value="" required autocomplete="off" placeholder='Mobile*'
+            (keyup)='mobRegFlag=false;submitted=false;'></ion-input>
+        </ion-item>
+        <div class="err-msg" *ngIf="(FrmLogin.controls.TxtLogMobile.hasError('required') || FrmLogin.controls.TxtLogMobile.hasError('pattern')) && submitted">
+          Enter a valid mobile number(<span
+            *ngIf="model.min_mobile==model.max_mobile">{{model.min_mobile}}</span><span
+            *ngIf="model.min_mobile!=model.max_mobile">{{model.min_mobile}} -
+            {{model.max_mobile}}</span> Digits)!
+        </div>
+        <div class="err-msg" *ngIf="mobRegFlag && submitted">Mobile number or Password does not match!</div>     
+        <ion-item class="form-input-holder mobile-input-holder">
+          <ion-input type="password" formControlName="TxtLoginPassword" [(ngModel)]="model.password" class="mobile-input"  name="TxtLoginPassword" id="TxtLoginPassword" value="" required autocomplete="off" placeholder='Password' (keyup)='submitted=false;'></ion-input>
+        </ion-item>
+        <div class="err-msg" *ngIf="(FrmLogin.controls.TxtLoginPassword.hasError('required') && submitted)">Password is mandatory</div>
+      </ion-list>
+      <ion-button type="submit" (click)='submitted=true;' expand='full' class='btn-submit'>Submit</ion-button>
+    </form>
+  </div>
+  <p class="forgot-pwd-link" tappable (click)='goToForgotPassword()'>
+    <strong>Forgot Password?</strong>
+  </p>  
+  <p class="msg-lighter grey-text register-text" tappable (click)='goToRegisteration()'>
+    Have not register yet? <strong>Register here</strong>
+  </p>
+</ion-content>

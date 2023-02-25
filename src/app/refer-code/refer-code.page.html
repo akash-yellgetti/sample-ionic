@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-toolbar class="transparent-navbar white-text">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Referral Code</ion-title>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text ion-padding">
+    <div class="refer-img-holder">
+      <img class="refer-img" src="../../assets/imgs/referral-program.jpg" alt="">
+    </div>
+    <div class="full-content white-text" padding>
+      Share the code with your friend and ask them to use it while register. Your free lets will be added after your friend creates his first lets
+    </div>
+    <div class="referral-code-text">
+      Your Referral Code is <span>{{ referralCode }}</span>.
+    </div>
+    <div class="copy-holder" (click)="copyReferalCode()">
+      <div class="copy-link">
+        <ion-icon name="copy"></ion-icon> Copy Code
+      </div>
+    </div>
+    <div class="share-link-holder" (click)="showInviteFriendsPage()">
+      <div class="share-link">
+        <ion-icon name="paper-plane"></ion-icon> Share with friends
+      </div>
+    </div>
+  </ion-content>
+  

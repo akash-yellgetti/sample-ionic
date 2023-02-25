@@ -1,0 +1,105 @@
+<ion-content class="dark-bg login-bg">
+  <div class="top-header-container">
+      <div class='notifications-link' tappable (click)='checkLetsRequest()'>
+          <ion-icon name="notifications" class='notifi-logo'></ion-icon>
+      </div>
+  </div>
+  <div class='lets-holder'>
+      <form [formGroup]="FrmCreateLets" (ngSubmit)="onSubmit(FrmCreateLets.value)">
+          <ion-grid class="homegrid">
+              <ion-row *ngIf="!disableFormFlag">
+                  <ion-col size='4'>
+                      <div class='lets-text'>Lets</div>
+                  </ion-col>
+                  <ion-col col-8 class='lets-suggestion-holder'>
+                      <ion-item lines="none" class="lets-item">
+                        <ion-input type="text" formControlName='TxtLets' [(ngModel)]='model.lets_text'
+                            placeholder="Type Keywords" (keyup)="showLetsKeywords()" required
+                            [disabled]='disableFlag' [readonly]='readOnlyFlag'>
+                        </ion-input>
+                      </ion-item>
+                      <div class="err-msg" *ngIf="(FrmCreateLets.controls.TxtLets.hasError('required') || restrictedWordErr) && submitted">{{keywordMsg}}</div>
+                      <div class='lets-suggestions' *ngIf='letsKeywords.length'>
+                          <ul class='ul-suggestions'>
+                              <li *ngFor='let letsKeyword of letsKeywords; let i=index'>
+                                  <div class='suggestion-text' (click)='selectKeyword(i)'>{{letsKeyword.lets_keyword}}
+                                  </div>
+                              </li>
+                          </ul>
+                      </div>
+                  </ion-col>
+              </ion-row>
+              <ion-row *ngIf="!disableFormFlag">
+                  <ion-col size='12'>
+                      <div class='for-text'>For</div>
+                  </ion-col>
+              </ion-row>
+              <ion-row *ngIf="!disableFormFlag">
+                  <ion-col size='4'>
+                      <div class='next-text'>Next</div>
+                  </ion-col>
+                  <ion-col col-5>
+                      <ion-item class="lets-item">
+                          <ion-input type="number" formControlName='TxtMinutes' [(ngModel)]='model.minutes'
+                              placeholder="Eg. 30" required [disabled]='disableFlag' [readonly]='readOnlyFlag'>
+                          </ion-input>
+                      </ion-item>
+                      <div class="err-msg" *ngIf="FrmCreateLets.controls.TxtMinutes.hasError('required') && submitted">Invalid value</div>
+                  </ion-col>
+                  <ion-col size='3'>
+                      <div class='mins-text'>Minutes</div>
+                  </ion-col>
+              </ion-row>
+              <ion-row *ngIf="!disableFormFlag">
+                  <ion-col size='12' class="looking-for-label">
+                    Looking For
+                  </ion-col>
+                  <ion-col size='12' style="padding-top:0px;">
+                    <ion-item class="lets-item">
+                        <ion-label>Looking For</ion-label>
+                          <ion-select formControlName='DdlGender' [(ngModel)]='model.gender'
+                              [disabled]='disableFlag'>
+                              <ion-select-option value="0">Select</ion-select-option>
+                              <ion-select-option *ngFor="let letstag of letsTagList" value="{{letstag.tag_id}}">
+                                  {{letstag.tag_name}}</ion-select-option>
+                          </ion-select>
+                      </ion-item>
+                      <div class="err-msg" *ngIf="(FrmCreateLets.controls.DdlGender.hasError('required') || FrmCreateLets.controls.DdlGender.hasError('min')) && submitted">Select Gender</div>
+                  </ion-col>
+              </ion-row>
+              <ion-row *ngIf="!disableFormFlag">
+                  <ion-col size='12' class='text-center'>
+                      <ion-button [disabled]='!FrmCreateLets.valid && disableFormFlag' type="submit" class='btn-lets' expand='block'>Send Request</ion-button>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </form>
+  </div>
+
+  <div class='timer-container' *ngIf="disableFormFlag">
+      <div class="spin-holder">
+          <div class="spin">
+              <ion-spinner name="bubbles"></ion-spinner>
+          </div>
+      </div>
+      <div class='display-time-text'>We are waiting for your right activity partner.</div>
+      <div class='display-time-text'>Lets expires after</div>
+      <div class='display-time'>{{displayTime}}</div>
+      <div class='display-time-text'>{{totalAvailableUsers}} Users available in area</div>
+      <div class='cancel-lets-link' (click)="cancelLets()">Cancel Lets</div>
+  </div>
+
+  <div class="bottom-header-container">
+      <div class='profile-link' tappable (click)='showProfile()'>
+          <ion-icon name="person-circle-sharp"></ion-icon>
+          <div class='full-content profile-text'>Profile</div>
+      </div>
+      <div class='lets-link'  tabbale (click)="goToHome()">
+          <img class='lets-img' src='../../assets/imgs/logo.png' />
+      </div>
+      <div class='discover-link' tappable (click)='showDiscover()'>
+          <ion-icon name="albums"></ion-icon><br />
+          <div class='full-content discover-text'>Discover</div>
+      </div>
+  </div>
+</ion-content>

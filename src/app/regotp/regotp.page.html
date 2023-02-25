@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar class='transparent-navbar white-text'>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content class="dark-bg white-text ion-padding">
+  <form [formGroup]="FrmRegOtp" (ngSubmit)="onSubmit(FrmRegOtp.value)" class="ion-text-center">
+      <p class="h1-header reg-otp-header">
+          Verify OTP
+      </p>
+      <p class="msg-lighter grey-text reg-otp-desc">
+          Please enter the OTP to verify your mobile number
+      </p>
+      <ion-list class='form-list login-form-list'>
+          <ion-item class="form-input-holder mobile-input-holder">
+              <ion-input type="text" placeholder="OTP" [(ngModel)]="model.otp" formControlName="TxtOTP"
+                  class='mobile-input'></ion-input>
+          </ion-item>
+          <div class="err-msg" *ngIf="FrmRegOtp.controls.TxtOTP.hasError('required') && submitted">Enter OTP</div>
+      </ion-list>
+      <ion-button type="submit" (click)='submitted=true;' expand='block' class='btn-submit' >Continue</ion-button>
+  </form>
+</ion-content>

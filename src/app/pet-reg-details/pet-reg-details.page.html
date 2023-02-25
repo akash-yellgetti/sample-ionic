@@ -1,0 +1,61 @@
+<ion-content padding class="login-bg">
+  <div class="full-content text-center pet-heading">
+    Do you have any pet?
+  </div>
+
+  <div class="reg-pet-holder">
+    <div class="reg-pet-container">
+      <div class="pet-content-box">
+        <div class="pet-container" (click)='setPetType(1)'>
+          <div class="pet-content" [ngClass]="{'pet-content-active':petType==1}">
+            <div class="pet-logo-holder">
+              <img src="../../assets/imgs/dog.jpg" alt="" class="pet-logo">
+            </div>
+            <div class="pet-header">Dog</div>
+          </div>
+        </div>
+      </div>
+      <div class="pet-content-box">
+        <div class="pet-container" (click)='setPetType(2)'>
+          <div class="pet-content" [ngClass]="{'pet-content-active':petType==2}">
+            <div class="pet-logo-holder">
+              <img src="../../assets/imgs/cat.jpeg" alt="" class="pet-logo">
+            </div>
+            <div class="pet-header">Cat</div>
+          </div>
+        </div>
+      </div>
+      <div class="full-content text-center">
+        <div class="pet-content-box">
+          <div class="pet-container" (click)='setPetType(3)'>
+            <div class="pet-content" [ngClass]="{'pet-content-active':petType==3}">
+              <div class="pet-logo-holder">
+                <img src="../../assets/imgs/others_pet.png" alt="" class="pet-logo">
+              </div>
+              <div class="pet-header">Others</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="full-content" style="padding-bottom: 15px;" *ngIf="petType==3">
+    <ion-item lines="none" class="lets-item">
+      <ion-input type="text" [(ngModel)]='model.pet_type_name' placeholder="Enter Pet Name like Rabbit">
+      </ion-input>
+    </ion-item>
+    <div class="err-msg" *ngIf="petErr">Enter Required Detail</div>
+  </div>
+
+  <div class="full-content" style="padding-bottom: 15px;">
+    <ion-button type="button" color='light' expand="full"  (click)="skipPetDetails()">I do not have pet</ion-button>
+  </div>
+
+  <div class="full-content" style="padding-bottom: 15px;">
+    <ion-button type="button" color="primary" expand="full" (click)="savePetType()">Submit</ion-button>
+  </div>
+  
+
+</ion-content>
+

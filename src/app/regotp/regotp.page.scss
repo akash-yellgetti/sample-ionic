@@ -1,0 +1,64 @@
+.ion-padding{
+  --padding-top:50px;
+}
+
+.reg-bg {
+  background-color: #f1efef;
+}
+
+.toolbar-background-md {
+  border-color: none;
+  background: transparent;
+}
+
+.header-md::after,
+.tabs-md[tabsPlacement="top"] > .tabbar::after,
+.footer-md::before,
+.tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+  background-image: none;
+}
+
+.toolbar-title-md {
+  color: #065efe;
+}
+
+.login-bg {
+  background-color: #dadbdb;
+}
+.h1-header {
+  color: #065efe;
+}
+
+.reg-otp-header {
+  font-size: 2.5rem;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.reg-otp-desc {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.login-form-list {
+  .form-input-holder {
+    background-color: #ffffff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+}
+.login-form-list .form-input-holder .item-inner {
+  margin-left: 0px;
+}
+
+.mobile-input-holder{
+  background: #ffffff !important;
+  --background:#ffffff;
+  color:#222222;
+  margin-bottom:10px;
+}
+
+.mobile-input{
+  border-bottom:0;
+}

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar class='transparent-navbar white-text'>
+    <ion-buttons slot="start">
+      <ion-button (click)="backToProfile()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>My Subscriptions</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="dark-bg white-text subscription-padding">
+  <div class="full-content">
+    <div class="close-button" (click)="this.navCtrl.pop()">
+      <ion-icon name="close-circle"></ion-icon>
+    </div>
+  </div>
+  <div class="full-content">
+    <div class="subscription-holder" *ngIf="subscribedFlag">
+      <div class="subscription-top" *ngIf="resultObj.plan_type==1">Your Lets</div>
+      <div class="subscription-top" *ngIf="resultObj.plan_type==2">Your Package</div>
+      <div class="subscription-bottom"  *ngIf="resultObj.plan_type==1">
+        <div class="subscription-box">
+          <div class="subscription-text">{{resultObj.num_of_lets}}</div>
+          <div class="subscription-time">Lets</div>
+          <div class="subscription-price">Rs. {{resultObj.discount_price}}</div>
+          <div class="subscription-validity">{{resultObj.validity_days}} Days</div>
+          <div class="subscription-expiry">Expriy Date: {{resultObj.expiry_date}}</div>
+        </div>
+      </div>
+      <div class="subscription-bottom"  *ngIf="resultObj.plan_type==2">
+        <div class="subscription-box">
+          <div class="subscription-text">{{resultObj.validiity_months}}</div>
+          <div class="subscription-time">Month(s)</div>
+          <div class="subscription-price">Rs. {{resultObj.discount_price}}</div>
+          <div class="subscription-expiry">Expriy Date: {{resultObj.expiry_date}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="full-content subscription-msg" *ngIf="!subscribedFlag">
+        You do not have any lets or lets subscription. Please subscribe one.
+    </div>
+    <div class="full-content" *ngIf="!subscribedFlag">
+      <div class="continue" (click)="openPlans()">Buy Lets or Subscriptions</div>
+    </div>
+    <div class="full-content" *ngIf="subscribedFlag">
+      <div class="continue" (click)="openPlans()">Change Plans</div>
+    </div>
+  </div>
+</ion-content>

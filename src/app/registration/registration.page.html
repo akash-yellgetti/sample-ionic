@@ -1,0 +1,63 @@
+<ion-content class="dark-bg white-text ion-padding">
+	<div class='logo-holder'>
+		<img class='logo-img' src='../../assets/imgs/logo.png' alt="Logo" />
+	</div>
+	<p class='h1-header reg-mobile-header'>
+		Signup
+	</p>
+	<p class="msg-lighter grey-text mobile-reg-desc">
+		When you tap "Continue". ItsLets will send you a text with OTP. The verified phone
+		number can be used to login.
+	</p>
+	<div class='full-content login-form-wrapper'>
+		<form [formGroup]="FrmRegistration" (ngSubmit)="onSubmit(FrmRegistration.value)" class="ion-text-center">
+			<ion-list class='form-list login-form-list'>
+				<ion-item class="form-input-holder mobile-input-holder">
+					<!-- <ion-icon name="call" item-left class="mobile-icon"></ion-icon> -->
+					<ion-select [(ngModel)]="model.country_phone_code" (ionChange)="getCountryVal()"
+						interface="action-sheet" class="mobile-select" name="DdlCountry" id="DdlCountry"
+						formControlName="DdlCountry" [selectedText]="model.country_phone_code">
+						<ng-template ngFor let-country [ngForOf]="countries">
+							<ion-select-option value="+{{country.country_phone_code}}" *ngIf="country.country_phone_code!=''">
+								+{{country.country_phone_code}} {{country.country_name}}
+							</ion-select-option>
+						</ng-template>
+					</ion-select>
+					<ion-input type="number" formControlName="TxtLogMobile" [(ngModel)]="model.mobile"
+						class="mobile-input" name="TxtLogMobile" id="TxtLogMobile" value="" required autocomplete="off"
+						placeholder='Mobile*' (keyup)='mobRegFlag=false;mismatch=false;'></ion-input>
+				</ion-item>				
+				<div class="err-msg"
+					*ngIf="(FrmRegistration.controls.TxtLogMobile.hasError('required') || FrmRegistration.controls.TxtLogMobile.hasError('pattern')) && submitted">
+					Enter a valid mobile number(<span
+						*ngIf="model.min_mobile==model.max_mobile">{{model.min_mobile}}</span><span
+						*ngIf="model.min_mobile!=model.max_mobile">{{model.min_mobile}} -
+						{{model.max_mobile}}</span> Digits)!
+				</div>
+				<div class="err-msg" *ngIf="mobRegFlag && submitted">Mobile number not registered with us!</div>
+				<ion-item class="form-input-holder mobile-input-holder">
+					<ion-input type="password" formControlName="TxtPwdRegister" [(ngModel)]="model.password"
+						class="mobile-input" name="TxtPwdRegister" id="TxtPwdRegister" value="" required autocomplete="off"
+						placeholder='Password' (keyup)='submitted=false'></ion-input>
+				</ion-item>
+				<div class="err-msg" *ngIf="(FrmRegistration.controls.TxtPwdRegister.hasError('required') && submitted)">Password is Mandatory</div>
+				<ion-item class="form-input-holder mobile-input-holder">
+					<ion-input type="password" formControlName="TxtConfPwdRegister" [(ngModel)]="model.confpassword"
+					class="mobile-input" name="TxtConfPwdRegister" id="TxtConfPwdRegister" value="" required autocomplete="off"
+					placeholder='Confirm Password' (keyup)='submitted=false'></ion-input>
+				</ion-item>
+				<div class="err-msg" *ngIf="((FrmRegistration.controls.TxtPwdRegister.value != FrmRegistration.controls.TxtConfPwdRegister.value) && submitted)">Confirm Password does not match</div>
+				<div class="err-msg" *ngIf="(FrmRegistration.controls.TxtConfPwdRegister.hasError('required') && submitted)">Confirm Password is Mandatory</div>
+				<ion-item>
+					<ion-checkbox formControlName="ChkTerms" name="ChkTerms" id="ChkTerms" (ionChange)="checkTerms($event)" checked="false" [(ngModel)]="privacyChecked"></ion-checkbox> 
+					<span class="privacy-text">I have read and agree to the <a (click)="showPrivacy()" class="link-text"><strong>Terms and Conditions</strong></a></span>
+				</ion-item>
+				<div class="err-msg" *ngIf="(FrmRegistration.controls.ChkTerms.hasError('required') && submitted)">Please read and agree with the terms before submitting</div>
+			</ion-list>
+			<ion-button type="submit" (click)='submitted=true;' expand='block' class='btn-submit'>Continue</ion-button>
+		</form>
+	</div>
+	<p class="msg-lighter grey-text login-text" (click)='goToLogin()'>
+		Already registered. <strong>Login here</strong>
+	</p>
+</ion-content>
