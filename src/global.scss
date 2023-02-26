@@ -24,3 +24,514 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+// @import "~swiper/css/bundle";
+@import "./../node_modules/swiper/swiper-bundle.css";
+
+@media (prefers-color-scheme: dark) {
+  /*
+   * Dark Colors
+   * -------------------------------------------
+   */
+  
+  body {
+    --ion-color-primary: #428cff;
+    --ion-color-primary-rgb: 66,140,255;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #3a7be0;
+    --ion-color-primary-tint: #5598ff;
+  
+    --ion-color-secondary: #50c8ff;
+    --ion-color-secondary-rgb: 80,200,255;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255,255,255;
+    --ion-color-secondary-shade: #46b0e0;
+    --ion-color-secondary-tint: #62ceff;
+  
+    --ion-color-tertiary: #6a64ff;
+    --ion-color-tertiary-rgb: 106,100,255;
+    --ion-color-tertiary-contrast: #ffffff;
+    --ion-color-tertiary-contrast-rgb: 255,255,255;
+    --ion-color-tertiary-shade: #5d58e0;
+    --ion-color-tertiary-tint: #7974ff;
+  
+    --ion-color-success: #2fdf75;
+    --ion-color-success-rgb: 47,223,117;
+    --ion-color-success-contrast: #000000;
+    --ion-color-success-contrast-rgb: 0,0,0;
+    --ion-color-success-shade: #29c467;
+    --ion-color-success-tint: #44e283;
+  
+    --ion-color-warning: #ffd534;
+    --ion-color-warning-rgb: 255,213,52;
+    --ion-color-warning-contrast: #000000;
+    --ion-color-warning-contrast-rgb: 0,0,0;
+    --ion-color-warning-shade: #e0bb2e;
+    --ion-color-warning-tint: #ffd948;
+  
+    --ion-color-danger: #ff4961;
+    --ion-color-danger-rgb: 255,73,97;
+    --ion-color-danger-contrast: #ffffff;
+    --ion-color-danger-contrast-rgb: 255,255,255;
+    --ion-color-danger-shade: #e04055;
+    --ion-color-danger-tint: #ff5b71;
+  
+    --ion-color-dark: #f4f5f8;
+    --ion-color-dark-rgb: 244,245,248;
+    --ion-color-dark-contrast: #000000;
+    --ion-color-dark-contrast-rgb: 0,0,0;
+    --ion-color-dark-shade: #d7d8da;
+    --ion-color-dark-tint: #f5f6f9;
+  
+    --ion-color-medium: #989aa2;
+    --ion-color-medium-rgb: 152,154,162;
+    --ion-color-medium-contrast: #000000;
+    --ion-color-medium-contrast-rgb: 0,0,0;
+    --ion-color-medium-shade: #86888f;
+    --ion-color-medium-tint: #a2a4ab;
+  
+    --ion-color-light: #222428;
+    --ion-color-light-rgb: 34,36,40;
+    --ion-color-light-contrast: #ffffff;
+    --ion-color-light-contrast-rgb: 255,255,255;
+    --ion-color-light-shade: #1e2023;
+    --ion-color-light-tint: #383a3e;
+  }
+  
+  /*
+   * iOS Dark Theme
+   * -------------------------------------------
+   */
+  
+  .ios body {
+    --ion-background-color: #000000;
+    --ion-background-color-rgb: 0,0,0;
+  
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255,255,255;
+  
+    --ion-color-step-50: #0d0d0d;
+    --ion-color-step-100: #1a1a1a;
+    --ion-color-step-150: #262626;
+    --ion-color-step-200: #333333;
+    --ion-color-step-250: #404040;
+    --ion-color-step-300: #4d4d4d;
+    --ion-color-step-350: #595959;
+    --ion-color-step-400: #666666;
+    --ion-color-step-450: #737373;
+    --ion-color-step-500: #808080;
+    --ion-color-step-550: #8c8c8c;
+    --ion-color-step-600: #999999;
+    --ion-color-step-650: #a6a6a6;
+    --ion-color-step-700: #b3b3b3;
+    --ion-color-step-750: #bfbfbf;
+    --ion-color-step-800: #cccccc;
+    --ion-color-step-850: #d9d9d9;
+    --ion-color-step-900: #e6e6e6;
+    --ion-color-step-950: #f2f2f2;
+  
+    --ion-toolbar-background: #0d0d0d;
+  
+    --ion-item-background: #1c1c1c;
+    --ion-item-background-activated: #313131;
+  }
+  
+  
+  /*
+   * Material Design Dark Theme
+   * -------------------------------------------
+   */
+  
+  .md body {
+    --ion-background-color: #121212;
+    --ion-background-color-rgb: 18,18,18;
+  
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255,255,255;
+  
+    --ion-border-color: #222222;
+  
+    --ion-color-step-50: #1e1e1e;
+    --ion-color-step-100: #2a2a2a;
+    --ion-color-step-150: #363636;
+    --ion-color-step-200: #414141;
+    --ion-color-step-250: #4d4d4d;
+    --ion-color-step-300: #595959;
+    --ion-color-step-350: #656565;
+    --ion-color-step-400: #717171;
+    --ion-color-step-450: #7d7d7d;
+    --ion-color-step-500: #898989;
+    --ion-color-step-550: #949494;
+    --ion-color-step-600: #a0a0a0;
+    --ion-color-step-650: #acacac;
+    --ion-color-step-700: #b8b8b8;
+    --ion-color-step-750: #c4c4c4;
+    --ion-color-step-800: #d0d0d0;
+    --ion-color-step-850: #dbdbdb;
+    --ion-color-step-900: #e7e7e7;
+    --ion-color-step-950: #f3f3f3;
+  
+    --ion-item-background: #1A1B1E;
+  }
+  
+  ion-title.title-large {
+    --color: white;
+  }
+}
+
+.ios body {
+  --ion-background-color: #000000;
+  --ion-background-color-rgb: 0,0,0;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255,255,255;
+
+  --ion-color-step-50: #0d0d0d;
+  --ion-color-step-100: #1a1a1a;
+  --ion-color-step-150: #262626;
+  --ion-color-step-200: #333333;
+  --ion-color-step-250: #404040;
+  --ion-color-step-300: #4d4d4d;
+  --ion-color-step-350: #595959;
+  --ion-color-step-400: #666666;
+  --ion-color-step-450: #737373;
+  --ion-color-step-500: #808080;
+  --ion-color-step-550: #8c8c8c;
+  --ion-color-step-600: #999999;
+  --ion-color-step-650: #a6a6a6;
+  --ion-color-step-700: #b3b3b3;
+  --ion-color-step-750: #bfbfbf;
+  --ion-color-step-800: #cccccc;
+  --ion-color-step-850: #d9d9d9;
+  --ion-color-step-900: #e6e6e6;
+  --ion-color-step-950: #f2f2f2;
+  --ion-toolbar-background: #0d0d0d;
+  --ion-item-background: #1c1c1c;
+  --ion-item-background-activated: #313131;
+}
+
+
+/*General Css*/
+:root[mode=ios],
+:root[mode=md]{
+  --ion-font-family:  'Roboto'!important;
+  font-family:  'Roboto' !important;
+  font-weight: 400 !important;
+  --primary-green:#01bfa5;
+  font-size: 13px !important;
+  color: #333 !important;
+}
+
+body{
+  background-color: #000000;
+  --background-color: #000000;
+}
+
+ion-content{
+  --padding:15px;
+  --margin-top:50px;
+  --padding-top:20px;
+}
+
+.mobile-input{
+  background: transparent !important;
+  border: none !important;
+  padding:5px;
+}
+
+.err-msg{
+  display: block;
+  text-align: left;
+  margin-left: 15px;
+  color: red;
+}
+
+// .err-msg{
+//     font-size: 12px;
+//     color: red;
+// }
+
+.mandatory {
+  color: red;
+}
+
+.btn-submit,
+.btn-submit:focus,
+.btn-submit:active {
+  background-color: #065efe;
+  height: 4rem;
+  border-radius: 5px;
+}
+
+.btn-submit.button-md {
+  text-transform: none;
+}
+
+.button.btn-submit:hover:not(.disable-hover) {
+  background-color: #065efe;
+}
+
+.list.form-list .item-block.mobile-input-holder .item-inner {
+  border: none;
+}
+
+.form-list.list .mobile-input-holder.item.item-input-has-focus .item-inner,
+.mobile-input-holder.item.item-input-has-focus:last-child .item-inner {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+}
+
+.form-list.list
+  .mobile-input-holder.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.form-list.list
+  .mobile-input-holder.item-ios.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner {
+  border: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.mobile-input-holder.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.mobile-input-holder.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.mobile-input-holder.item-ios.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.mobile-input-holder.item-ios.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+}
+
+.form-list.list
+  .mobile-input-holder.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.form-list.list
+  .mobile-input-holder.item-ios.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+}
+
+.mobile-input-holder.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.mobile-input-holder.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.list-md
+  .mobile-input-holder.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+.list-md
+  .mobile-input-holder.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+.mobile-input-holder.item-ios.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.mobile-input-holder.item-ios.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner,
+.list-ios
+  .mobile-input-holder.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+.list-ios
+  .mobile-input-holder.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+}
+
+.form-list.list .mobile-input-holder.item.item-input-has-focus:last-child,
+.form-list.list .mobile-input-holder.item.input-has-focus:last-child {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+}
+
+.form-list.list
+  .mobile-input-holder.item-input.ng-invalid.ng-touched.input-has-focus.item-input-has-focus:last-child {
+  // border-bottom: solid 1px #EEE;
+  border: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.form-list.list
+  .mobile-input-holder.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child {
+  // border-bottom: solid 1px #EEE;
+  border: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.msg-lighter {
+  font-weight: lighter;
+  // word-spacing: 3px;
+}
+
+// .grey-text{
+//     color: #888;
+// }
+
+.full-content {
+  float: left;
+  width: 100%;
+}
+
+.form-wrapper {
+  padding: 0px 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// alert box css
+
+.alert-md .alert-head {
+  text-align: left;
+  text-align: start;
+  padding: 0px;
+}
+
+.alert-md .alert-title {
+  padding: 12px 12px;
+  font-size: 18px;
+  background-color: #065efe;
+  color: #fff;
+}
+
+.alert-md .alert-sub-title {
+  font-size: 16px;
+  padding: 12px 12px 7px 12px;
+}
+
+.custom-success-class {
+  .toast-wrapper {
+    background-color: #32db64;
+  }
+}
+
+.custom-failure-class {
+  .toast-wrapper {
+    background-color: #f53d3d;
+  }
+}
+
+.empty-msg {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 10px;
+}
+
+.bottom-header-container {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom:5px;
+  z-index: 10;
+  background-color: #065efe;
+}
+
+.profile-link {
+  align-self: left;
+}
+
+.discover-link {
+  align-self: right;
+}
+
+.profile-link,
+.discover-link {
+  color: #fff;
+  flex: 1;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.lets-link {
+  display: flex;
+  flex: 1;
+}
+
+.lets-img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -45px;
+  // border: solid 4px #fff;
+}
+
+.discover-text,
+.profile-text {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.transparent-navbar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+}
+
+.transparent-navbar .toolbar-background-md {
+  border-color: none;
+  background: none;
+}
+
+.transparent-navbar.white-text {
+  .bar-button-default-md {
+    color: #ffffff;
+  }
+  .toolbar-title-md {
+    color: #fff;
+  }
+}
+
+.dark-bg {
+    background-color: #2c2c2e !important;
+    --background-color: #2c2c2e;
+}
+.white-text{
+  color: #FFF;
+}
+.err-msg {
+  width: 100%;
+  color: #b60000;
+  font-size: 12px;
+}
+
+.alert-md .alert-button.alert-success {
+  background-color: #065efe;
+  color: #fff;
+  padding: 0;
+  padding: 7px 10px;
+}
+
+.alert-md .alert-button.alert-fail {
+  padding: 0;
+  background-color: #fd3d3d;
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 7px;
+}
+
+.alert-md .alert-message {
+  padding: 15px;
+  color: #333;
+  overflow-y: auto;
+}
+
+.alert-md .alert-button.alert-fail-text {
+  color: #fd3d3d;
+}
